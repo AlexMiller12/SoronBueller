@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+	let (:base_title) { "What smells?" }
+
 	describe "Home page" do
 
 		it "should have the content 'Sample App'" do
@@ -10,7 +12,7 @@ describe "Static pages" do
 		end
 		it "should have title 'home'" do
 			visit '/static_pages/home'
-			expect(page).to have_title('home')
+			expect(page).to have_title("#{base_title} || home")
 		end
 	end
 
